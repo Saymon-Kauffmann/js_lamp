@@ -6,7 +6,9 @@ turn_on.addEventListener('click', lamp_on);
 turn_off.addEventListener('click', lamp_off);
 lamp.addEventListener('mouseover', lamp_on);
 lamp.addEventListener('mouseleave', lamp_off);
-lamp.addEventListener('dblclick', broke);
+lamp.addEventListener('dblclick', () => lamp.src = './images/broked.jpg');
+
+const brkd_lamp = () => lamp.src.indexOf('broked') > -1;
 
 function lamp_on () {
     if (!brkd_lamp ()) {
@@ -20,10 +22,5 @@ function lamp_off () {
     }
 }
 
-function broke () {
-    lamp.src = './images/broked.jpg';
-}
 
-function brkd_lamp () {
-    return lamp.src.indexOf('broked') > -1;
-}
+
